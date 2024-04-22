@@ -1,0 +1,22 @@
+Image 
+always place image in public folder
+. in src of image tag always points the public folder
+
+
+Component 
+    component are function 
+    whose first Letter is capital
+    and is called just like calling tag
+    component must return only one wrapper
+    use {} to   perform js operation inside tag (+,-,/,*,variable call , map , filter)
+    component are custom tag
+    anything that is written inside return of component are printed on browser
+
+
+
+Props
+    sending values to component are called props.
+    boolean are not displayed on browser
+    do not dispaly object in browser (It will throw error)
+    
+

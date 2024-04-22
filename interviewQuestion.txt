@@ -1,0 +1,4 @@
+difference between component and function 
+    difference lies while calling
+    App()=> functions
+    <App></App>=>component
