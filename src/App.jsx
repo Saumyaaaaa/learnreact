@@ -9,6 +9,7 @@ import LearnUseState1 from "./component/LearnUseState/LearnUseState1";
 import ShowAndHideElement from "./component/LearnUseState/ShowAndHideElement";
 import MyComponent from "./component/LearnUseState/MyComponent";
 import { useState } from "react";
+import IncrementByChoice from "./component/LearnUseState/IncrementByChoice";
 // import Name from "./component/Name";
 
 let App = () => {
@@ -44,7 +45,7 @@ let App = () => {
       {/* <DestructurePros name="somya" age={21}></DestructurePros> */}
       {/* <LearnUseState1></LearnUseState1> */}
       {/* <ShowAndHideElement></ShowAndHideElement> */}
-      {show === true ? <MyComponent></MyComponent> : null}
+      {/* {show === true ? <MyComponent></MyComponent> : null}
       <button
         onClick={() => {
           setShow(true);
@@ -58,7 +59,8 @@ let App = () => {
         }}
       >
         Close
-      </button>
+      </button> */}
+      <IncrementByChoice></IncrementByChoice>
     </>
   );
 };
