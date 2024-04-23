@@ -1,5 +1,4 @@
-// import React from 'react'
-
+import React from "react";
 const LearnToUseMap = () => {
   const products = [
     {
@@ -53,95 +52,117 @@ const LearnToUseMap = () => {
       isAvailable: true,
     },
   ];
- 
-
-
+  let category = products.map((value, index) => {
+    return value.category;
+  });
+  let getTotalPrice = () => {
+    let availableProduct = products.filter((value, i) => {
+      if (value.isAvailable === true) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    let totalPrice = availableProduct.reduce((pre, cur) => {
+      return pre + cur.price;
+    }, 0);
+    return totalPrice;
+  };
+  // let totalPrice=availableProduct.reduce((pre,cur)=>{
+  //   return pre+cur.price
+  // },0)
+  // return totalPrice
+  // }
+  let uniqueCategory = [...new Set(category)];
   return (
     <div>
-      <h1>Products are:</h1>
+      <br />
+      <h1>the product in our shop(unique category)</h1>
+      {uniqueCategory.map((value, index) => {
+        return <div>{value}</div>;
+      })}
+      <br />
+      <h1>the products in our shop(Unique Category)</h1>
+      {[...new Set(products.map((product) => product.category))]}
       <div>
-        {products.map((value, i) => {
-          return <div> {value.title}</div>;
-        })}
-        <h2>Product in our shop:</h2>
-        {products.map((value, i) => {
-          return (
-            <div>
-              {value.title} costs {value.price} and its category is{" "}
-              {value.category}
-            </div>
-          );
-        })}
-        <h2>Show a products whose price is greater than 2000</h2>
-        {products.map((value, i) => {
-          if (value.price > 2000)
+        <h1>Products are:</h1>
+        <div>
+          {products.map((value, i) => {
+            return <div> {value.title}</div>;
+          })}
+          <h2>Product in our shop:</h2>
+          {products.map((value, i) => {
             return (
               <div>
                 {value.title} costs {value.price} and its category is{" "}
                 {value.category}
               </div>
             );
-        })}
-        <h2>products who category are books</h2>
-        <div>
-          {products
-            .filter((value, i) => value.category === "Books")
-            .map((value, i) => {
+          })}
+          <h2>Products whose price is greater than 2000</h2>
+          {products.map((value, i) => {
+            if (value.price > 2000)
               return (
                 <div>
-                  {value.title} costs NRS {value.price} and its category is{" "}
+                  {value.title} costs {value.price} and its category is{" "}
                   {value.category}
                 </div>
               );
-            })}
-
-          <h2>
-            total price of all products :
-            {products.reduce((prev, curr) => prev + curr.price, 0)}
-          </h2>
-
-          <h2>Price of each item</h2>
+          })}
+          <h2>products who category are books</h2>
+          <div>
+            {products
+              .filter((value, i) => value.category === "Books")
+              .map((value, i) => {
+                return (
+                  <div>
+                    {value.title} costs NRS {value.price} and its category is{" "}
+                    {value.category}
+                  </div>
+                );
+              })}
+            <h2>
+              total price of all products :
+              {products.reduce((prev, curr) => prev + curr.price, 0)}
+            </h2>
+            <h2>Price of each item</h2>
+            <div>
+              {products.map((value, i) => {
+                return (
+                  <div>
+                    <div>
+                      {value.title} costs {value.price}
+                    </div>
+                  </div>
+                );
+              })}
+              Total price of all products :
+              {products.reduce((prev, curr) => prev + curr.price, 0)}
+            </div>
+          </div>
+          <h2>Manufactured at</h2>
           <div>
             {products.map((value, i) => {
               return (
                 <div>
-                  <div>
-                    {value.title} costs {value.price}
-                  </div>
+                  {value.title} is manufactured at {value.manufactureDate}
                 </div>
               );
             })}
-            total price of all products :
-            {products.reduce((prev, curr) => prev + curr.price, 0)}
           </div>
-        </div>
-        <h2>manufactred at</h2>
-        <div>
+          <h3>Product title which are available</h3>
           {products.map((value, i) => {
-            return (
-              <div>
-                {value.title} is manufactured at {value.manufactureDate}
-              </div>
-            );
+            if (value.isAvailable === true) {
+              return <div>these are the products available {value.title}</div>;
+            }
           })}
-        </div>
-        <h3>display a product title which are available</h3>
-        {products.map((value, i) => {
-          if (value.isAvailable === true) {
-            return <div>these are the products available {value.title}</div>;
-          }
-        })}
-        <h2>Display a total price of product which is available</h2>
-        <div>
-          
-        {products.filter((value, i) =>value.isAvailable === true).reduce((prev,curr)=>{
-          
-          return <div>{prev+curr.price}</div>
-        })}
+          <h2>Display a total price of product which is available</h2>
+          <div>
+            <p>the total price is{getTotalPrice()}</p>
+          </div>
         </div>
       </div>
     </div>
   );
 };
-
 export default LearnToUseMap;

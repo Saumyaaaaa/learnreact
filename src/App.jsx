@@ -1,11 +1,18 @@
 // import Age from "./Age";
 // import College from "./component/College";
 // import Info from "./component/Info";
+import Info from "./component/Info";
+import LearnTernaryOperator from "./component/LearnTernaryOperator";
 import LearnToUseMap from "./component/LearnToUseMap";
+import DestructurePros from "./component/DestructurePros";
+import LearnUseState1 from "./component/LearnUseState/LearnUseState1";
+import ShowAndHideElement from "./component/LearnUseState/ShowAndHideElement";
+import MyComponent from "./component/LearnUseState/MyComponent";
+import { useState } from "react";
 // import Name from "./component/Name";
 
-
-let App=()=>{
+let App = () => {
+  let [show, setShow] = useState(true);
   return (
     <>
       <div>
@@ -32,12 +39,30 @@ let App=()=>{
          father={{name:"sunil",age: 55}}> 
           </Info> */}
       {/* <College name="St lawrence"  address="chabahil " faculty="CSIT"></College> */}
-      <LearnToUseMap></LearnToUseMap>
+      {/* <LearnToUseMap></LearnToUseMap> */}
+      {/* <LearnTernaryOperator></LearnTernaryOperator> */}
+      {/* <DestructurePros name="somya" age={21}></DestructurePros> */}
+      {/* <LearnUseState1></LearnUseState1> */}
+      {/* <ShowAndHideElement></ShowAndHideElement> */}
+      {show === true ? <MyComponent></MyComponent> : null}
+      <button
+        onClick={() => {
+          setShow(true);
+        }}
+      >
+        Show
+      </button>
+      <button
+        onClick={() => {
+          setShow(false);
+        }}
+      >
+        Close
+      </button>
     </>
   );
-  
-}
-export default App
+};
+export default App;
 
-/* 
+/*
  */
