@@ -10,6 +10,11 @@ import ShowAndHideElement from "./component/LearnUseState/ShowAndHideElement";
 import MyComponent from "./component/LearnUseState/MyComponent";
 import { useState } from "react";
 import IncrementByChoice from "./component/LearnUseState/IncrementByChoice";
+import LearnButtonClick from "./component/LearnButtonClick";
+import LearnInlineCss from "./component/LearnCss/LearnInlineCss";
+import LearnExternalCss from "./component/LearnCss/LearnExternalCss";
+import AppLinks from "./component/AppLinks";
+import AppRoutes from "./component/AppRoutes";
 // import Name from "./component/Name";
 
 let App = () => {
@@ -60,7 +65,12 @@ let App = () => {
       >
         Close
       </button> */}
-      <IncrementByChoice></IncrementByChoice>
+      {/* <IncrementByChoice></IncrementByChoice> */}
+      {/* <LearnButtonClick/> */}
+      {/* <LearnInlineCss/> */}
+      {/* <LearnExternalCss/> */}
+      <AppLinks/>
+      <AppRoutes/>
     </>
   );
 };

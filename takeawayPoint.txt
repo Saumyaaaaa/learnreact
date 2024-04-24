@@ -20,3 +20,7 @@ Props
     do not dispaly object in browser (It will throw error)
     
 
+
+
+NavLink change url 
+Route gives component based on url
