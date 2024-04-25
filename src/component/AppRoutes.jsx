@@ -1,13 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-//
+import Home from "./Home";
+import Contact from "./Contact";
+import About from "./About";
+//attach component with url
 const AppRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<div>This is Home Page</div>}></Route>
-        <Route path="/contact" element={<div>This is contact Page</div>}></Route>
-        <Route path="/about" element={<div>This is about Page</div>}></Route>
+        <Route path="/" element={<Home name="saumya neupane"></Home>}></Route>
+        <Route path="/contact" element={<Contact phone={9863336368} />}></Route>
+        <Route path="/about" element={<About detail="i am a student"/>}></Route>
       </Routes>
     </div>
   );
