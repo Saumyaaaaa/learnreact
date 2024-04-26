@@ -7,7 +7,7 @@ const About = ({detail}) => {
     <>
     <div>
       <button onClick={()=>{
-       navigate("/contact")
+       navigate("/contact",{replace:true})
       }}>Change Url to contact</button>
     </div>
     </>

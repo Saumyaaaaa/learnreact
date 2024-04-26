@@ -15,6 +15,8 @@ import LearnInlineCss from "./component/LearnCss/LearnInlineCss";
 import LearnExternalCss from "./component/LearnCss/LearnExternalCss";
 import AppLinks from "./component/AppLinks";
 import AppRoutes from "./component/AppRoutes";
+import Form1 from "./component/learnForm/Form1";
+import Form2 from "./component/learnForm/Form2";
 // import Name from "./component/Name";
 
 let App = () => {
@@ -69,8 +71,10 @@ let App = () => {
       {/* <LearnButtonClick/> */}
       {/* <LearnInlineCss/> */}
       {/* <LearnExternalCss/> */}
-      <AppLinks/>
-      <AppRoutes/>
+      {/* <AppLinks/> */}
+      {/* <AppRoutes/> */}
+      {/* <Form1/> */}
+      <Form2/>
     </>
   );
 };
