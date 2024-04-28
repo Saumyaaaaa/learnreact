@@ -17,6 +17,9 @@ import AppLinks from "./component/AppLinks";
 import AppRoutes from "./component/AppRoutes";
 import Form1 from "./component/learnForm/Form1";
 import Form2 from "./component/learnForm/Form2";
+import LearnUseReducer from "./component/LearnUseReducer/LearnUseReducer";
+import LearnUseReducer2 from "./component/LearnUseReducer/LearnUseReducer2";
+import LearnUseReducer3 from "./component/LearnUseReducer/LearnUseReducer3";
 // import Name from "./component/Name";
 
 let App = () => {
@@ -74,7 +77,10 @@ let App = () => {
       {/* <AppLinks/> */}
       {/* <AppRoutes/> */}
       {/* <Form1/> */}
-      <Form2/>
+      {/* <Form2/> */}
+      {/* <LearnUseReducer/> */}
+      {/* <LearnUseReducer2/> */}
+      <LearnUseReducer3/>
     </>
   );
 };

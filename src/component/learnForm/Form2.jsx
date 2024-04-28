@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 const Form2 = () => {
   let [name, setName] = useState("");
@@ -6,6 +6,9 @@ const Form2 = () => {
   let [address, setAddress] = useState("");
   let [password, setPassword] = useState("");
   let [email, setEmail] = useState("");
+  let [description, setDescription] = useState("");
+  let [gender, setGender] = useState("");
+
   return (
     <div>
       <form
@@ -67,6 +70,44 @@ const Form2 = () => {
           />
         </div>
         <br />
+        <div>
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+        <br />
+        <div>
+          Gender &nbsp;
+          <label htmlFor="male">Male</label>
+          <input
+            type="radio"
+            id="male"
+            value="male"
+            checked={gender === "male"}
+            onChange={(e) => setGender(e.target.value)}
+          />
+          <label htmlFor="female">Female</label>
+          <input
+            type="radio"
+            id="female"
+            value="female"
+            checked={gender === "female"}
+            onChange={(e) => setGender(e.target.value)}
+          />
+          <label htmlFor="other">Other</label>
+          <input
+            type="radio"
+            id="other"
+            value="other"
+            checked={gender === "other"}
+            onChange={(e) => setGender(e.target.value)}
+          />
+        </div>
+        <br />
+
         <button type="submit">Next</button>
       </form>
     </div>
