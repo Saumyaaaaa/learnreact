@@ -24,3 +24,15 @@ Props
 
 NavLink change url 
 Route gives component based on url
+
+
+
+
+
+every option has optional value
+
+
+input                               value                      e.target.value
+all input and textarea,select       state value               e.target.value
+radio                                checked                  e.target.value
+checkbox                             checked                  e.target.checked

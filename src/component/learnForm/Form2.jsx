@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 
 const Form2 = () => {
   let [name, setName] = useState("");
@@ -7,14 +7,39 @@ const Form2 = () => {
   let [password, setPassword] = useState("");
   let [email, setEmail] = useState("");
   let [description, setDescription] = useState("");
-  let [gender, setGender] = useState("");
-
+  let [gender, setGender] = useState("female");
+  let [country, setCountry] = useState("america");
+  let [isMarried, setIsMarried] = useState(false);
+  let genders = [
+    { label: "Male", value: "male" },
+    { label: "Female", value: "female" },
+    { label: "Other", value: "other" },
+  ];
+  let countries = [
+    { label: "Nepal", value: "nepal" },
+    { label: "India", value: "india" },
+    { label: "America", value: "america" },
+    { label: "German", value: "german" },
+    { label: "Uk", value: "ukd" },
+  ];
   return (
     <div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           console.log("form is submitted");
+          let data = {
+            name: name,
+            age: age,
+            address: address,
+            email: email,
+            password: password,
+            description: description,
+            gender: gender,
+            country: country,
+            isMarried: isMarried,
+          };
+          console.log(data);
         }}
       >
         <div>
@@ -79,7 +104,7 @@ const Form2 = () => {
           />
         </div>
         <br />
-        <div>
+        {/* <div>
           Gender &nbsp;
           <label htmlFor="male">Male</label>
           <input
@@ -105,8 +130,74 @@ const Form2 = () => {
             checked={gender === "other"}
             onChange={(e) => setGender(e.target.value)}
           />
+        </div> */}
+
+        {/* <div>
+          <label>Country</label>
+          <select
+            value={country}
+            onChange={(e) => {
+              setCountry(e.target.value);
+            }}
+          >
+            <option value="nepal">Nepal</option>
+            <option value="china">China</option>
+            <option value="india">India</option>
+            <option value="america">America</option>
+          </select>
+        </div> */}
+
+        <div>
+          <label>Country:</label>
+          <select
+            value={country}
+            onChange={(e) => {
+              setCountry(e.target.value);
+            }}
+          >
+            {countries.map((item, i) => {
+              return (
+                <option key={i} value={item.value}>
+                  {item.label}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+
+        <div>
+          <label>Gender:</label>
+          {genders.map((item, i) => {
+            return (
+              //item= { label: "Male", value: "male" },
+              <span key={i}>
+                <label htmlFor={item.value}>{item.label}</label>
+                <input
+                  id={item.value}
+                  type="radio"
+                  checked={gender === item.value}
+                  value={item.value}
+                  onChange={(e) => {
+                    setGender(e.target.value);
+                  }}
+                ></input>
+              </span>
+            );
+          })}
         </div>
         <br />
+
+        <div>
+          <label htmlFor="isMarried">IsMarried?</label>
+          <input
+            type="checkbox"
+            id="isMarried"
+            checked={isMarried === true}
+            onChange={(e) => {
+              setIsMarried(e.target.checked);
+            }}
+          />
+        </div>
 
         <button type="submit">Next</button>
       </form>
