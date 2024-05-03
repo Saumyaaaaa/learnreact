@@ -1,6 +1,8 @@
 import { Field, Form, Formik } from "formik";
 import React from "react";
-import * as yup from "yup"
+import * as yup from "yup";
+import FormikInput from "./FormikInput";
+import FormikTextArea from "./FormikTextArea";
 
 const FormikForm = () => {
   //each field has 3 things
@@ -13,13 +15,12 @@ const FormikForm = () => {
   let onSubmit = (value, other) => {
     console.log(value);
   };
-//validation will run only if 
-//onChange event is fire
-//onBlur(touched) event is fire
-//onSubmit event is fire
+  //validation will run only if
+  //onChange event is fire
+  //onBlur(touched) event is fire
+  //onSubmit event is fire
 
-//
-
+  //
 
   let validationSchema = yup.object({
     firstName: yup.string().required("First Name Field is Required"),
@@ -28,79 +29,45 @@ const FormikForm = () => {
   });
   return (
     <>
-      <Formik initialValues={initialValues} onSubmit={onSubmit}
-      validationSchema={validationSchema}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}
+      >
         {(formik) => {
           return (
             <Form>
-              <Field name="firstName">
-                {({ field, form, meta }) => {
-                  return (
-                    <div>
-                      <label htmlFor="firstName">First Name:</label>
-                      <input
-                      {...field}
-                        type="text"
-                        id="firstName"
-                        value={meta.value}
-                        onChange={(e) => {
-                          formik.setFieldValue("firstName", e.target.value);
-                        }}
-                      />
-                      {meta.touched && meta.error ? (
-                        <div style={{ color: "red" }}>{meta.error}</div>
-                      ) : null}
-                    </div>
-                  );
-                }}
-              </Field>
               <br />
-
-              <Field name="lastName">
-                {({ field, form, meta }) => {
-                  return (
-                    <div>
-                      <label htmlFor="lastName">Last Name:</label>
-                      <input
-                        {...field}
-                        type="text"
-                        id="lastName"
-                        value={meta.value}
-                        // onChange={(e) => {
-                        //   formik.setFieldValue("lastName", e.target.value);
-                        // }}
-                        onChange={field.onChange}
-                      />
-                      {meta.touched && meta.error ? (
-                        <div style={{ color: "red" }}>{meta.error}</div>
-                      ) : null}
-                    </div>
-                  );
+              <FormikInput
+                name="firstName"
+                label="First Name"
+                type="text"
+                onChange={(e) => {
+                  formik.setFieldValue("firstName", e.target.value);
                 }}
-              </Field>
-              <br />
-
-              <Field name="description">
-                {({ field, form, meta }) => {
-                  return (
-                    <div>
-                      <label htmlFor="lastName">Description:</label>
-                      <input
-                        {...field}
-                        id="lastName"
-                        value={meta.value}
-                        // onChange={(e) => {
-                        //   formik.setFieldValue("description", e.target.value);
-                        // }}
-                        onChange={field.onChange}
-                      />
-                      {meta.touched && meta.error ? (
-                        <div style={{ color: "red" }}>{meta.error}</div>
-                      ) : null}
-                    </div>
-                  );
+                placeholder="firstName"
+                required={true}
+              ></FormikInput>
+              <FormikInput
+                name="lastName"
+                label="Last Name"
+                type="text"
+                onChange={(e) => {
+                  formik.setFieldValue("lastName", e.target.value);
                 }}
-              </Field>
+                placeholder="lastName"
+                required={true}
+              ></FormikInput>
+              <FormikTextArea
+                name="description"
+                label="Description"
+                type="text"
+                onChange={(e) => {
+                  formik.setFieldValue("description", e.target.value);
+                }}
+                placeholder="description"
+                required={true}
+              ></FormikTextArea>
               <br />
               <button type="submit">Submit</button>
             </Form>
@@ -112,7 +79,6 @@ const FormikForm = () => {
 };
 
 export default FormikForm;
-
 
 /*
 meta={
