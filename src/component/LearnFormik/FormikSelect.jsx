@@ -1,8 +1,16 @@
 import { Field } from "formik";
 import React from "react";
 
-const FormikTextArea = ({ name, label, type, onChange, required, ...props }) => {
+const FormikSelect = ({
+  name,
+  label,
+  onChange,
+  required,
+  options,
+  ...props
+}) => {
   // props={placeholder:"firstName",style:{backgroundCOlor:"red"}}
+
   return (
     <>
       <div>
@@ -14,14 +22,25 @@ const FormikTextArea = ({ name, label, type, onChange, required, ...props }) => 
                   {label}
                   {required ? <span style={{ color: "red" }}>*</span> : null}
                 </label>
-                <textarea
+                <select
                   {...field}
                   {...props}
-                  type={type}
                   id={name}
                   value={meta.value}
                   onChange={onChange ? onChange : field.onChange}
-                />
+                >
+                  {options.map((item, i) => {
+                    return (
+                      <option
+                        key={i}
+                        value={item.value}
+                        disabled={item.disabled}
+                      >
+                        {item.label}
+                      </option>
+                    );
+                  })}
+                </select>
                 {meta.touched && meta.error ? (
                   <div style={{ color: "red" }}>{meta.error}</div>
                 ) : null}
@@ -34,4 +53,4 @@ const FormikTextArea = ({ name, label, type, onChange, required, ...props }) => 
   );
 };
 
-export default FormikTextArea;
+export default FormikSelect;
