@@ -21,6 +21,7 @@ import LearnUseReducer from "./component/LearnUseReducer/LearnUseReducer";
 import LearnUseReducer2 from "./component/LearnUseReducer/LearnUseReducer2";
 import LearnUseReducer3 from "./component/LearnUseReducer/LearnUseReducer3";
 import FormikForm from "./component/LearnFormik/FormikForm";
+import FormikTutorial from "./component/LearnFormik/FormikTutorial";
 
 // import Name from "./component/Name";
 
@@ -79,7 +80,8 @@ let App = () => {
       {/* <AppLinks/> */}
       {/* <AppRoutes/> */}
       {/* <Form1/> */}
-      <FormikForm/>
+      {/* <FormikForm/> */}
+      <FormikTutorial/>
       {/* <Form2/> */}
       
       {/* <LearnUseReducer/> */}
