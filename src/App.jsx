@@ -8,7 +8,7 @@ import DestructurePros from "./component/DestructurePros";
 import LearnUseState1 from "./component/LearnUseState/LearnUseState1";
 import ShowAndHideElement from "./component/LearnUseState/ShowAndHideElement";
 import MyComponent from "./component/LearnUseState/MyComponent";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import IncrementByChoice from "./component/LearnUseState/IncrementByChoice";
 import LearnButtonClick from "./component/LearnButtonClick";
 import LearnInlineCss from "./component/LearnCss/LearnInlineCss";
@@ -26,8 +26,22 @@ import LearnUseRef1 from "./component/LearnUseRef/LearnUseRef1";
 import LearnUseState2 from "./component/LearnUseState/LearnUseState2";
 import LearnUseState3 from "./component/LearnUseState/LearnUseState3";
 import LearnUseState4 from "./component/LearnUseState/LearnUseState4";
+import Rendering1 from "./component/LearnUseState/Rendering/Rendering1";
+import Rendering2 from "./component/LearnUseState/Rendering/Rendering2";
+import Parent from "./component/LearnUseState/Rendering/Parent";
+import SetLocalStorage from "./component/learnlocalStorage/SetLocalStorage";
+import GetLocalStorage from "./component/learnlocalStorage/GetLocalStorage";
+import DeleteLocalStorage from "./component/learnlocalStorage/DeleteLocalStorage";
+import SetSessionStorage from "./component/learnSessionStorage/SetSessionStorage";
+import GetSessionStorage from "./component/learnSessionStorage/GetSessionStorage";
+import DeleteSessionStorage from "./component/learnSessionStorage/DeleteSessionStorage";
+import LearnUseEffect1 from "./component/LearnUseEffect/LearnUseEffect1";
+import LearnUseEffect2 from "./component/LearnUseEffect/LearnUseEffect2";
 
 // import Name from "./component/Name";
+
+export let Context1 = createContext();
+export let Context2 = createContext();
 
 let App = () => {
   let [show, setShow] = useState(true);
@@ -88,10 +102,25 @@ let App = () => {
       {/* <FormikTutorial/> */}
       {/* <LearnUseRef1/> */}
       {/* <LearnUseState2/> */}
-      <LearnUseState3/>
+      {/* <LearnUseState3/> */}
+      {/* <Rendering1/> */}
+      {/* <Rendering2/> */}
+      {/* <Context2.Provider value={10}>
+        <Context1.Provider value={{ name: "saumya", age: 21 }}>
+          <Parent />
+        </Context1.Provider>
+      </Context2.Provider> */}
+      {/* <SetLocalStorage/> */}
+      {/* <GetLocalStorage/> */}
+      {/* <DeleteLocalStorage/> */}
+      {/* <SetSessionStorage/> */}
+      {/* <GetSessionStorage/> */}
+      {/* <DeleteSessionStorage/> */}
+      {/* <LearnUseEffect1/> */}
+      <LearnUseEffect2/>
       {/* <LearnUseState4/> */}
       {/* <Form2/> */}
-      
+
       {/* <LearnUseReducer/> */}
       {/* <LearnUseReducer2/> */}
       {/* <LearnUseReducer3/> */}
@@ -101,4 +130,8 @@ let App = () => {
 export default App;
 
 /*
+context provider 
+make store 
+provide value
+access value
  */

@@ -21,7 +21,6 @@ const LearnUseState3 = () => {
       >
         Hide password
       </button> */}
-     
       <button
         onClick={() => {
           // if (type === "password") {
